@@ -5,9 +5,11 @@ import random
 app = Flask(__name__)
 
 
-    @app.route('/getSoreWithImg')
+@app.route('/getSoreWithImg')
 def hello_world():
-    result = {'value' : random.randint(0,10)}
+
+    score = 0   #!TODO 此处调用后端算法接口得到分数
+    result = {'value' : score}
     return jsonify(result)
 
 
