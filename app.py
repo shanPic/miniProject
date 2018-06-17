@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import jsonify
-# import random
+from random import randint
 from flask import request
 from PIL import Image
 
@@ -47,12 +47,12 @@ def getScoreWithImg():
             return errorReturn('can\'t find the timeStmp in this benchmark video',result)
 
 
-        score = 0   #!TODO 此处调用后端算法接口得到分数
+        score = randint(0,100)   #!TODO 此处调用后端算法接口得到分数
         result['value'] = score
         return jsonify(result)
 
-# @app.route('/')
-# def test():
-#     return app.send_static_file('test.html')
+@app.route('/')
+def test():
+    return app.send_static_file('test.html')
 if __name__ == '__main__':
     app.run()
