@@ -3,7 +3,6 @@ from flask import jsonify
 # import random
 from flask import request
 from PIL import Image
-import chardet
 
 app = Flask(__name__)
 
@@ -36,8 +35,8 @@ def getScoreWithImg():
 
 
         imgComp = Image.open(imgOri)
-        # imgOri.save('D:/CodeAndProject/Python/miniProject//src/test.jpg')
-        # f = open('D:/CodeAndProject/Python/miniProject//src/erro.log','w+')
+        # imgOri.save('')
+        # f = open('','w+')
         # f.write(str(type(imgOri))+'\n')
         # f.write(print(imgOri)
         # f.close()
@@ -52,8 +51,8 @@ def getScoreWithImg():
         result['value'] = score
         return jsonify(result)
 
-@app.route('/')
-def test():
-    return app.send_static_file('test.html')
+# @app.route('/')
+# def test():
+#     return app.send_static_file('test.html')
 if __name__ == '__main__':
     app.run()
